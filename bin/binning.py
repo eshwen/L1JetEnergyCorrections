@@ -227,6 +227,6 @@ eta_bin_colors = [
 # PU BINS
 ##########
 # pu_bins = [[25, 35], [40, 50], [55, 65]]
-pu_bins = [[40, 50]] # just to do one bin by itself
+pu_bins = [[50, 60]] # just to do one bin by itself
 
 pu_bins_lower = [[0, 5], [8, 12], [15, 25]] # run260627 lower PU overall - mean 10

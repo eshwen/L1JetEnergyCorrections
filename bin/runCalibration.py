@@ -585,6 +585,15 @@ def setup_fit(graph, function, absetamin, absetamax, outputfile):
         print fit_max
         fit_min = 40.0
         min_ind = 0
+    if absetamin == 4.191:
+        print "* WARNING: about to apply a JOE_HACK *"
+        print "* messing with fit limits for 4.191<|eta|<5.191 *"
+        max_ind = 17
+        fit_max = xarr[max_ind]
+        print max_ind
+        print fit_max
+        fit_min = 40.0                                                                                   
+        min_ind = 0
     ###############
     ###############
 
