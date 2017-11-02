@@ -13,8 +13,8 @@ void writeParamsForLUT()
 {
 
 	// SELECT THE INPUT AND OUTPUT FILES
-  std::string inputFile = "/storage/eb16003/output_initialNtuples_ak4_ref10to5000_l10to5000_dr0p25_etaBinsSel16_PU40to50_MASSAGEFITS.root";
-	std::string outputFile = "/storage/eb16003/inputParamsForLUT_initialNtuples_ak4_ref10to5000_l10to5000_dr0p25_etaBinsSel16_PU40to50_WITH_FITS_EDIT.txt";
+  std::string inputFile = "/storage/eb16003/TEST_Calibs_JEC/test_calibs_with_massaging_v2.root";
+  std::string outputFile = "/storage/eb16003/TEST_Calibs_JEC/test_calibs_with_massaging_v2.txt";
 
 	TFile * f = TFile::Open(inputFile.c_str());
 	TF1 * g00 = (TF1*)f->Get("EDITFIT_fitfcneta_0_0.435");
