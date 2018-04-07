@@ -55,8 +55,8 @@ Dataset = namedtuple("Dataset", "inputDataset unitsPerJob totalUnits useParent")
 samples = {
     # SPRING 18/100X
     # --------------
-    "qcdSpring18FlatPU0to70genSimRaw": Dataset(inputDataset="/QCD_Pt-15to3000_TuneCP5_Flat_13TeV_pythia8/RunIISpring18DRNZSPU0to70_100X_upgrade2018_realistic_v10-v1/GEN-SIM-RAW",
-                           useParent=False, unitsPerJob=10, totalUnits=-1),
+    "qcdSpring18FlatPU0to70genSimRaw": Dataset(inputDataset="/QCD_Pt-15to3000_TuneCP5_Flat_13TeV_pythia8/RunIISpring18DR-NZSPU0to70_100X_upgrade2018_realistic_v10-v1/GEN-SIM-RAW",
+                                               useParent=False, unitsPerJob=10, totalUnits=-1), # 4.9M events, 1.7k evt/file
     # SUMMER 17/92X
     # -------------
     "qcdSummer17FlatPU28to62genSimRaw":	Dataset(inputDataset="/QCD_Pt-15to3000_TuneCUETP8M1_Flat_13TeV_pythia8/RunIISummer17DRStdmix-NZSFlatPU28to62_92X_upgrade2017_realistic_v10-v1/GEN-SIM-RAW",
