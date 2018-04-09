@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: l1Ntuple -s RAW2DIGI --era=Run2_2018 --mc --python_filename=l1NtupleMcMaker2018-RAW2DIGI_v1.py --no_output -n 202 --conditions=101X_upgrade2018_realistic_v6 --customise=L1Trigger/Configuration/customiseReEmul.L1TReEmulMCFromRAWSimHcalTP --customise=L1Trigger/L1TNtuples/customiseL1Ntuple.L1NtupleRAWEMUGEN_MC --customise=L1Trigger/Configuration/customiseSettings.L1TSettingsToCaloParams_2018_v1_1_inconsistent --custom_conditions=HcalGains_2018_v3.0_mc,HcalGainsRcd,frontier://FrontierProd/CMS_CONDITIONS --custom_conditions=HcalSiPMParameters_2018_v2.0_mc,HcalSiPMParametersRcd,frontier://FrontierProd/CMS_CONDITIONS --filein=/store/mc/RunIISpring18DR/QCD_Pt-15to3000_TuneCP5_Flat_13TeV_pythia8/GEN-SIM-RAW/NZSPU0to70_100X_upgrade2018_realistic_v10-v1/100000/00818B45-1522-E811-910B-1866DAEA7E64.root
+# with command line options: l1Ntuple -s RAW2DIGI --era=Run2_2018 --mc --python_filename=l1NtupleMcMaker2018_RAW2DIGI_v1.py --no_output -n 202 --conditions=100X_upgrade2018_realistic_v11 --customise=L1Trigger/Configuration/customiseReEmul.L1TReEmulMCFromRAWSimHcalTP --customise=L1Trigger/L1TNtuples/customiseL1Ntuple.L1NtupleRAWEMUGEN_MC --customise=L1Trigger/Configuration/customiseSettings.L1TSettingsToCaloParams_2018_v1_1_inconsistent --custom_conditions=HcalChannelQuality_2018_v3.0_mc,HcalChannelQualityRcd,frontier://FrontierProd/CMS_CONDITIONS --filein=/store/mc/RunIISpring18DR/QCD_Pt-15to3000_TuneCP5_Flat_13TeV_pythia8/GEN-SIM-RAW/NZSPU0to70_100X_upgrade2018_realistic_v10-v1/100000/00818B45-1522-E811-910B-1866DAEA7E64.root
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.StandardSequences.Eras import eras
@@ -48,7 +48,7 @@ process.configurationMetadata = cms.untracked.PSet(
 
 # Other statements
 from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, '101X_upgrade2018_realistic_v6', 'HcalSiPMParameters_2018_v2.0_mc,HcalSiPMParametersRcd,frontier://FrontierProd/CMS_CONDITIONS')
+process.GlobalTag = GlobalTag(process.GlobalTag, '100X_upgrade2018_realistic_v11', 'HcalChannelQuality_2018_v3.0_mc,HcalChannelQualityRcd,frontier://FrontierProd/CMS_CONDITIONS')
 
 # Path and EndPath definitions
 process.raw2digi_step = cms.Path(process.RawToDigi)
