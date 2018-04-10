@@ -15,7 +15,7 @@ import sys
 
 
 # CMSSW CONFIG TO RUN
-PY_CONFIG = '../python/l1NtupleMcMaker2018_RAW2DIGI_v1.py'
+PY_CONFIG = '../python/l1NtupleMcMaker2018_ECAL_ZS_RAW2DIGI_v1.py'
 
 # Auto-retrieve jet seed threshold in config
 # sys.path.append(os.path.dirname(os.path.abspath(PY_CONFIG)))  # nasty hack cos python packaging stoopid
@@ -24,7 +24,7 @@ PY_CONFIG = '../python/l1NtupleMcMaker2018_RAW2DIGI_v1.py'
 # print 'Running with JetSeedThreshold', jst
 
 # CHANGE ME - to make a unique indentifier for each set of jobs
-job_append = "qcdSpring18_genEmu_07Apr2018_1010v97p22_noJEC_3ae18f212"
+job_append = "qcdSpring18_genEmu_10Apr2018_1003v97p22_noJEC_ECALZP_3ae18f212"
 # old example (includes tuning of JST):
 # job_append = "Stg2_HF_QCDFall15_RAWONLY_11Mar_dasuUpdatesLayer1_noL1JEC_jst%s" % str(jst).replace('.', 'p')
 
