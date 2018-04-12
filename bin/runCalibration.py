@@ -83,7 +83,8 @@ STAGE1_DEFAULT_PARAMS = [1, 5, 1, -25, 0.01, -20]
 # STAGE2_DEFAULT_PARAMS_ORIGINAL = [-0.5, 50, 1, -80, 0.01, -20]
 STAGE2_DEFAULT_PARAMS_CONVENTIONAL = [6.89, -252.79, 27.01, 4345.01, 0.01, -20.9794]
 STAGE2_DEFAULT_PARAMS_JETMET1 = [-11.64, -43.50, 1.19, 2190.7, 0, -19.51, -18.7426, 0.22, 0.98] # new jet met function has three more parameters
-STAGE2_DEFAULT_PARAMS_JETMETERR = [1.4036, -1398000, 0, 0.2249, 0, -2.926, 1.175] # other new jet met function, err func style (no idea what params should be)
+#STAGE2_DEFAULT_PARAMS_JETMETERR = [1.4036, -1398000, 0, 0.2249, 0, -2.926, 1.175] # other new jet met function, err func style (no idea what params should be)
+STAGE2_DEFAULT_PARAMS_JETMETERR = [1.86431, -1.34016e+06, -2.85506e-08, 20.2633, -6.40935e-07, -1.54, 1.06511]
 
 #######################################################
 # select which fit function and input parameters to use
@@ -575,6 +576,33 @@ def setup_fit(graph, function, absetamin, absetamax, outputfile):
         print max_ind
         print fit_max
         fit_min = 40.0
+        min_ind = 0
+    if absetamin == 2.964:
+        print "* WARNING: about to apply a JOE_HACK *"
+        print "* messing with fit limits for 2.964<|eta|<3.489 *"
+        max_ind = 17
+        fit_max = xarr[max_ind]
+        print max_ind
+        print fit_max
+        fit_min = 40.0
+        min_ind = 0
+    if absetamin == 3.489:
+        print "* WARNING: about to apply a JOE_HACK *"
+        print "* messing with fit limits for 3.489<|eta|<4.191 *"
+        max_ind = 17
+        fit_max = xarr[max_ind]
+        print max_ind
+        print fit_max
+        fit_min = 40.0
+        min_ind = 0
+    if absetamin == 4.191:
+        print "* WARNING: about to apply a JOE_HACK *"
+        print "* messing with fit limits for 4.191<|eta|<5.191 *"
+        max_ind = 17
+        fit_max = xarr[max_ind]
+        print max_ind
+        print fit_max
+        fit_min = 40.0                                                                                   
         min_ind = 0
     ###############
     ###############
