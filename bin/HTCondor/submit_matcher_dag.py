@@ -66,7 +66,9 @@ NTUPLE_DIRS = [
     #'/hdfs/L1JEC/CMSSW_9_0_0_pre2/crab_qcdSpring16FlatPU20to70genSimRaw_qcdSpring16_genEmu_21Feb2017_902pre2v91p16_withJEC_6e31c000a39c3/intialNtuples',
     #'/hdfs/L1JEC/CMSSW_9_2_0/crab_qcdSpring17FlatPU0to70genSimRaw_qcdSpring17_genEmu_13Jun2017_920v95p13_withoutJEC_43041fdb/initialNtuples',
     #'/hdfs/L1JEC/CMSSW_9_2_8/crab_qcdSummer17FlatPU28to62genSimRaw_qcdSummer17_genEmu_27Oct2017_928v96p49_noJEC_46c34f99b37a/initialNtuples/',
-    '/hdfs/L1JEC/CMSSW_9_2_8/crab_qcdSummer17FlatPU28to62genSimRaw_qcdSummer17_genEmu_03Nov2017_928v96p49_withJEC_79eea6f204/initialNtuples/',
+    #'/hdfs/L1JEC/CMSSW_9_2_8/crab_qcdSummer17FlatPU28to62genSimRaw_qcdSummer17_genEmu_03Nov2017_928v96p49_withJEC_79eea6f204/initialNtuples/',
+    #'/hdfs/L1JEC/CMSSW_10_0_3/crab_qcdSpring18FlatPU0to70genSimRaw_qcdSpring18_genEmu_09Apr2018_1003v97p22_noJEC_3ae18f212/initialNtuples/',
+    '/hdfs/L1JEC/CMSSW_10_0_3/crab_qcdSpring18FlatPU0to70genSimRaw_qcdSpring18_genEmu_10Apr2018_1003v97p22_noJEC_ECALZS_3ae18f212/initialNtuples/',
 ]
 
 # Pick one
