@@ -15,7 +15,7 @@ import sys
 
 
 # CMSSW CONFIG TO RUN
-PY_CONFIG = '../python/l1NtupleMcMaker2017_RAW2DIGI.py'
+PY_CONFIG = '../python/l1NtupleMcMaker2018_ECAL_ZS_RAW2DIGI_v1.py'
 
 # Auto-retrieve jet seed threshold in config
 # sys.path.append(os.path.dirname(os.path.abspath(PY_CONFIG)))  # nasty hack cos python packaging stoopid
@@ -24,13 +24,15 @@ PY_CONFIG = '../python/l1NtupleMcMaker2017_RAW2DIGI.py'
 # print 'Running with JetSeedThreshold', jst
 
 # CHANGE ME - to make a unique indentifier for each set of jobs
-job_append = "qcdSpring16_genEmu_21Feb2017_902pre2v91p7_withJEC_6e31c000a39c3"
+job_append = "qcdSpring18_genEmu_10Apr2018_1003v97p22_noJEC_ECALZP_3ae18f212"
 # old example (includes tuning of JST):
 # job_append = "Stg2_HF_QCDFall15_RAWONLY_11Mar_dasuUpdatesLayer1_noL1JEC_jst%s" % str(jst).replace('.', 'p')
 
 
 # CHANGE ME - select dataset(s) keys to run over - see python/mc_samples.py
-datasets = ["qcdSpring16FlatPU20to70genSimRaw"]  # Fall15, RAW
+datasets = ["qcdSpring18FlatPU0to70genSimRaw"]
+# old examples (they also include datasets with 0 PU):
+# datasets = ["qcdSpring16FlatPU20to70genSimRaw"]  # Fall15, RAW
 # old examples (they also include datasets with 0 PU):
 # datasets = ["QCDFlatFall15PU0to50NzshcalRawRECO", "QCDFlatFall15NoPURECO"]  # Fall15, RAW + RECO (via useParent)
 # datasets = ["QCDFlatFall15PU0to50NzshcalRaw", "QCDFlatFall15NoPU"]  # Fall15, RAW
