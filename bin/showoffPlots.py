@@ -84,8 +84,9 @@ rsp_min, rsp_max = 0, 2
 # plot_title = "Spring15 MC, ak4PFCHS vs ak4GenJets, no PF cleaning"
 # plot_title = "Spring15 MC, Stage2, L1 vs ak4PFCHS, no PF cleaning"
 
-plot_title = "Fall15 MC, 45-55PU, Stage 2, no L1JEC"
+# plot_title = "Fall15 MC, 45-55PU, Stage 2, no L1JEC"
 # plot_title = "Fall15 MC, 0PU, Stage 2, with L1JEC"
+plot_title = "Spring18 MC, 50-60PU, Stage 2, with L1JEC"
 
 # plot_title = "ttH, H #to bb MC, 30PU, Stage 2, no L1JEC (derived from Spring15)"
 # plot_title = "ttH, H #to bb MC, 30PU, Stage 2, with L1JEC (derived from Spring15)"
