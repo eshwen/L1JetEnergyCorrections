@@ -253,8 +253,8 @@ template<typename T>
 int findRecoJetIndex(T et, T eta, T phi, const L1AnalysisRecoJetDataFormat & jets) {
     for (unsigned i = 0; i < jets.nJets; ++i){
         // match two floating-point numbers: use range of acceptibility rather than ==
-        if (fabs(jets.etCorr[i] - et) < 0.01
-            && fabs(jets.eta[i] - eta) < 0.01
+      if (//fabs(jets.etCorr[i] - et) < 0.01 // keeping that condition caused errors when running matching between PF and Gen
+	    /* &&*/ fabs(jets.eta[i] - eta) < 0.01
             && fabs(jets.phi[i] - phi) < 0.01)
             return i;
     }
