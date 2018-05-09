@@ -22,6 +22,7 @@
 #include "L1Trigger/L1TNtuples/interface/L1AnalysisRecoJetDataFormat.h"
 #include "L1Trigger/L1TNtuples/interface/L1AnalysisL1UpgradeDataFormat.h"
 #include "L1Trigger/L1TNtuples/interface/L1AnalysisRecoVertexDataFormat.h"
+#include "L1Trigger/L1TNtuples/interface/L1AnalysisGeneratorDataFormat.h"
 
 // Headers from this package
 #include "DeltaR_Matcher.h"
@@ -39,6 +40,7 @@ using L1Analysis::L1AnalysisRecoJetDataFormat;
 using L1Analysis::L1AnalysisL1ExtraDataFormat;
 using L1Analysis::L1AnalysisL1UpgradeDataFormat;
 using L1Analysis::L1AnalysisRecoVertexDataFormat;
+using L1Analysis::L1AnalysisGeneratorDataFormat;
 using boost::lexical_cast;
 
 namespace fs = boost::filesystem;
@@ -62,10 +64,10 @@ int main(int argc, char* argv[]) {
     // get input TTrees
     // Reference jets - GenJets
     TString refJetDirectory = opts.refJetDirectory();
-    L1GenericTree<L1AnalysisL1ExtraDataFormat> refJetTree(opts.inputFilename(),
-                                                          refJetDirectory+"/L1ExtraTree",
-                                                          "L1Extra");
-    L1AnalysisL1ExtraDataFormat * refData = refJetTree.getData();
+    L1GenericTree<L1AnalysisGeneratorDataFormat> refJetTree(opts.inputFilename(),
+                                                          refJetDirectory+"/L1GenTree",
+                                                          "Generator");
+    L1AnalysisGeneratorDataFormat * refData = refJetTree.getData();
 
     // "L1" jets - PF jets
     TString l1JetDirectory = opts.l1JetDirectory();
@@ -235,21 +237,21 @@ int main(int argc, char* argv[]) {
         // Store pileup quantities //
         /////////////////////////////
         // note these get stored once per pair of matched jets NOT once per event
-        puInfoTree.GetEntry(iEntry);
-        out_trueNumInteractions = puInfoTree.trueNumInteractions();
-        out_numPUVertices = puInfoTree.numPUVertices();
-        out_recoNVtx = recoVtxData->nVtx;
+	//        puInfoTree.GetEntry(iEntry);
+	//        out_trueNumInteractions = puInfoTree.trueNumInteractions();
+	//        out_numPUVertices = puInfoTree.numPUVertices();
+	//        out_recoNVtx = recoVtxData->nVtx;
 
         /////////////////////////////////////////////
         // Make vectors of ref & L1 jets from trees //
         /////////////////////////////////////////////
-        std::vector<TLorentzVector> refJets = makeTLorentzVectors(refData->cenJetEt, refData->cenJetEta, refData->cenJetPhi);
+        std::vector<TLorentzVector> refJets = makeTLorentzVectors(refData->jetPt, refData->jetEta, refData->jetPhi);
 
         std::vector<TLorentzVector> l1Jets;
         if (doCleaningCuts) {
             l1Jets = makeRecoTLorentzVectorsCleaned(*l1Data, opts.cleanJets()); // with JetID filters
         } else {
-            l1Jets = makeTLorentzVectors(l1Data->etCorr, l1Data->eta, l1Data->phi);
+	  l1Jets = makeTLorentzVectors(l1Data->et, l1Data->eta, l1Data->phi); // etCorr used before but nEntries for it were different to eta and phi
         }
 
         out_nL1 = l1Jets.size();
