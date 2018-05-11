@@ -68,13 +68,19 @@ NTUPLE_DIRS = [
     #'/hdfs/L1JEC/CMSSW_9_2_8/crab_qcdSummer17FlatPU28to62genSimRaw_qcdSummer17_genEmu_27Oct2017_928v96p49_noJEC_46c34f99b37a/initialNtuples/',
     #'/hdfs/L1JEC/CMSSW_9_2_8/crab_qcdSummer17FlatPU28to62genSimRaw_qcdSummer17_genEmu_03Nov2017_928v96p49_withJEC_79eea6f204/initialNtuples/',
     #'/hdfs/L1JEC/CMSSW_10_0_3/crab_qcdSpring18FlatPU0to70genSimRaw_qcdSpring18_genEmu_09Apr2018_1003v97p22_noJEC_3ae18f212/initialNtuples/',
-    '/hdfs/L1JEC/CMSSW_10_0_3/crab_qcdSpring18FlatPU0to70genSimRaw_qcdSpring18_genEmu_10Apr2018_1003v97p22_noJEC_ECALZS_3ae18f212/initialNtuples/',
+    #'/hdfs/L1JEC/CMSSW_10_0_3/crab_qcdSpring18FlatPU0to70genSimRaw_qcdSpring18_genEmu_10Apr2018_1003v97p22_noJEC_ECALZS_3ae18f212/initialNtuples/',
+    #'/hdfs/L1JEC/CMSSW_10_0_3/crab_qcdSpring18FlatPU0to70genSimRaw_qcdSpring18_genEmu_13Apr2018_1003v97p22_withJEC_f94defd7a/initialNtuples/',
+    #'/hdfs/L1JEC/CMSSW_10_0_3/crab_qcdSpring18FlatPU0to70genSimRaw_qcdSpring18_genEmu_13Apr2018_1003v97p22_withJEC_ECALZS_f94defd7a/initialNtuples/',
+    '/hdfs/L1JEC/CMSSW_10_0_3/AaronNtuplesWithRecoCaloGen/initialNtuples/',
 ]
 
 # Pick one
-SAMPLE = 'MC_L1_Gen'
+#SAMPLE = 'MC_L1_Gen'
 # SAMPLE = 'MC_L1_PF'
-# SAMPLE = 'MC_PF_Gen'
+SAMPLE = 'MC_PF_Gen'
+#SAMPLE = 'MC_Calo_Gen'
+# SAMPLE = 'MC_L1_Calo'
+# SAMPLE = 'MC_Calo_PF'
 # SAMPLE = 'DATA'
 
 # Choose executable to run - must be located using `which <EXE>`
@@ -94,7 +100,7 @@ PT_REF_MIN = 10
 
 # TDirectory name for the L1 jets
 L1_DIR = 'l1UpgradeEmuTree'
-if SAMPLE.startswith('MC') and '_PF_' in SAMPLE:
+if SAMPLE.startswith('MC') and '_PF_' in SAMPLE or '_Calo_' in SAMPLE:
         L1_DIR = 'l1JetRecoTree'  # for PF vs Gen
 
 # TDirectory name for the reference jets
@@ -102,7 +108,7 @@ REF_DIR = 'l1JetRecoTree'
 if SAMPLE.startswith('MC'):
     if SAMPLE.endswith('Gen'):
         REF_DIR = 'l1GeneratorTree'
-    elif SAMPLE.endswith('PF'):
+    elif SAMPLE.endswith('PF') or SAMPLE.endswith('Calo'):
         REF_DIR = 'l1JetRecoTree'
     else:
         raise RuntimeError('Cannot get ref jet dir')
