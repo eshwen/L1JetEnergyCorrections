@@ -70,7 +70,7 @@ int main(int argc, char* argv[]) {
     L1AnalysisL1UpgradeDataFormat * l1Data = l1JetTree.getData();
 
     // TTree that holds PileupInfo
-    PileupInfoTree puInfoTree(opts.inputFilename());
+    //    PileupInfoTree puInfoTree(opts.inputFilename());
 
     // hold Event tree
     L1GenericTree<L1AnalysisEventDataFormat> eventTree(opts.inputFilename(),
@@ -227,10 +227,10 @@ int main(int argc, char* argv[]) {
         ////////////////////////
         out_event = eventData->event;
 
-        puInfoTree.GetEntry(iEntry);
-        out_trueNumInteractions = puInfoTree.trueNumInteractions();
-        out_numPUVertices = puInfoTree.numPUVertices();
-        out_recoNVtx = recoVtxData->nVtx;
+	//        puInfoTree.GetEntry(iEntry);
+	//        out_trueNumInteractions = puInfoTree.trueNumInteractions();
+	//        out_numPUVertices = puInfoTree.numPUVertices();
+	//        out_recoNVtx = recoVtxData->nVtx;
 
         /////////////////////////////////////////////
         // Get vectors of ref & L1 jets from trees //
@@ -239,7 +239,7 @@ int main(int argc, char* argv[]) {
         if (doCleaningCuts) {
             refJets = makeRecoTLorentzVectorsCleaned(*refData, opts.cleanJets()); // with JetID filters
         } else {
-            refJets = makeTLorentzVectors(refData->etCorr, refData->eta, refData->phi);
+            refJets = makeTLorentzVectors(refData->et, refData->eta, refData->phi);
         }
         std::vector<TLorentzVector> l1Jets  = makeTLorentzVectors(l1Data->jetEt, l1Data->jetEta, l1Data->jetPhi, l1Data->jetBx);
 

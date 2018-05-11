@@ -77,7 +77,7 @@ int main(int argc, char* argv[]) {
     L1AnalysisRecoJetDataFormat * l1Data = l1JetTree.getData();
 
     // TTree that holds PileupInfo
-    PileupInfoTree puInfoTree(opts.inputFilename());
+    //    PileupInfoTree puInfoTree(opts.inputFilename());
 
     // hold Event tree
     L1GenericTree<L1AnalysisEventDataFormat> eventTree(opts.inputFilename(),
