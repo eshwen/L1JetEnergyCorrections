@@ -52,6 +52,7 @@ namespace fs = boost::filesystem;
  * Warning: the header file that recognises the leaves for the reco/calo objects (L1TNtuples/interface/L1AnalysisRecoJetDataFormat.h) may not include native support for the calo jet leaves you need.
    Check the header file for references to "caloEt", "caloEta" and "caloPhi".
    If they're not included, add the lines `calo${quantity}.clear();` and `std::vector<float> calo${quantity};` in the relevant places. Then, recompile.
+ * You may also have to comment out the if() conditions in the function "findRecoJetIndex" in src/runMatcherUtils.cc
  */
 int main(int argc, char* argv[]) {
 
@@ -217,8 +218,8 @@ int main(int argc, char* argv[]) {
         // Store pileup quantities //
         /////////////////////////////
         // note these get stored once per pair of matched jets NOT once per event
-        out_trueNumInteractions = refData->nMeanPU;
-        out_numPUVertices = refData->nVtx;
+        // out_trueNumInteractions = refData->nMeanPU;
+        // out_numPUVertices = refData->nVtx;
 
         /////////////////////////////////////////////
         // Make vectors of ref & L1 jets from trees //
