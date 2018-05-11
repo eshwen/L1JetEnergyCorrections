@@ -13,4 +13,7 @@
 <bin name="RunMatcherData" file="RunMatcherData.cpp"/>
 <bin name="RunMatcherStage2PFGen" file="RunMatcherStage2PFGen.cpp"/>
 <bin name="RunMatcherStage2L1PF" file="RunMatcherStage2L1PF.cpp"/>
+<bin name="RunMatcherStage2L1Calo" file="RunMatcherStage2L1Calo.cpp"/>
+<bin name="RunMatcherStage2CaloGen" file="RunMatcherStage2CaloGen.cpp"/>
+<bin name="RunMatcherStage2CaloPF" file="RunMatcherStage2CaloPF.cpp"/>
 <!-- <bin name="RunMatcherDataStage1GT" file="RunMatcherDataStage1GT.cpp"/> -->
