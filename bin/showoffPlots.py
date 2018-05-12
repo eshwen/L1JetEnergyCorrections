@@ -47,10 +47,12 @@ ROOT.gErrorIgnoreLevel = ROOT.kWarning # turn off the printing output
 # using the --l1str and --refstr args
 #################################################
 l1_str = 'L1'
-# l1_str = 'PF'
+#l1_str = 'PF'
+#l1_str = 'Offline CaloJet'
 
-ref_str = "GenJet"
-# ref_str = "PFJet"
+#ref_str = 'GenJet'
+ref_str = 'PFJet'
+#ref_str = 'Offline CaloJet'
 
 # Some common axis labels
 rsp_str = "E_{T}^{%s}/E_{T}^{%s}" % (l1_str, ref_str)
@@ -86,7 +88,7 @@ rsp_min, rsp_max = 0, 2
 
 # plot_title = "Fall15 MC, 45-55PU, Stage 2, no L1JEC"
 # plot_title = "Fall15 MC, 0PU, Stage 2, with L1JEC"
-plot_title = "Spring18 MC, 50-60PU, Stage 2, with L1JEC"
+plot_title = "Spring18 MC, no PU specified, Stage 2"
 
 # plot_title = "ttH, H #to bb MC, 30PU, Stage 2, no L1JEC (derived from Spring15)"
 # plot_title = "ttH, H #to bb MC, 30PU, Stage 2, with L1JEC (derived from Spring15)"

@@ -75,12 +75,12 @@ NTUPLE_DIRS = [
 ]
 
 # Pick one
-#SAMPLE = 'MC_L1_Gen'
+# SAMPLE = 'MC_L1_Gen'
 # SAMPLE = 'MC_L1_PF'
-SAMPLE = 'MC_PF_Gen'
-#SAMPLE = 'MC_Calo_Gen'
+# SAMPLE = 'MC_PF_Gen'
+# SAMPLE = 'MC_Calo_Gen'
 # SAMPLE = 'MC_L1_Calo'
-# SAMPLE = 'MC_Calo_PF'
+SAMPLE = 'MC_Calo_PF'
 # SAMPLE = 'DATA'
 
 # Choose executable to run - must be located using `which <EXE>`
@@ -124,6 +124,7 @@ CLEANING_CUT = None  # MC
 # APPEND = 'MP_ak4_ref%sto5000_l10to5000_dr%s' % (str(PT_REF_MIN).replace('.', 'p'), str(DELTA_R).replace('.', 'p'))  # MPjets - MC
 # APPEND = 'MP_ak4_ref10to5000_l130to5000_dr%s_httL1Jets_allGenJets_MHT' % (str(DELTA_R).replace('.', 'p'))  # MPjets - MC
 APPEND = 'ak4_ref%dto5000_l10to5000_dr%s' % (PT_REF_MIN, str(DELTA_R).replace('.', 'p'))  # Demux jets - data
+#APPEND = 'CalovsPF'
 # APPEND = 'ak4_Gen%dto5000_PF0to5000_dr%s_noCleaning' % (PT_REF_MIN, str(DELTA_R).replace('.', 'p'))  # for PFGen exe
 # APPEND = 'MP_ak4_PF%dto5000_l10to5000_dr%s_noCleaning' % (PT_REF_MIN, str(DELTA_R).replace('.', 'p'))  # for L1PF exe
 
