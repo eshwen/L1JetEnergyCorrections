@@ -241,8 +241,8 @@ int main(int argc, char* argv[]) {
         // Store pileup quantities //
         /////////////////////////////
         // note these get stored once per pair of matched jets NOT once per event
-        out_trueNumInteractions = eventData->nPV_True();
-        out_numPUVertices = eventData->nPV();
+        out_trueNumInteractions = eventData->nPV_True;
+        out_numPUVertices = eventData->nPV;
         out_recoNVtx = recoVtxData->nVtx;
 
         /////////////////////////////////////////////

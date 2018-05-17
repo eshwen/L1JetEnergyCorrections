@@ -129,7 +129,7 @@ int main(int argc, char* argv[]) {
 
     // Quantities for reference jets (GenJet, etc):
     float out_ptRef(-1.), out_etaRef(99.), out_phiRef(99.);
-    int out_nRef(-1);
+    int out_nRef(-1), out_indRef;
     outTree.Branch("ptRef", &out_ptRef, "ptRef/Float_t");
     outTree.Branch("etaRef", &out_etaRef, "etaRef/Float_t");
     outTree.Branch("phiRef", &out_phiRef, "phiRef/Float_t");

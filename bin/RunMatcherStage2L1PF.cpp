@@ -230,8 +230,8 @@ int main(int argc, char* argv[]) {
         /////////////////////////////
         // Store pileup quantities //
         /////////////////////////////
-	    out_trueNumInteractions = eventData->nPV_True();
-        out_numPUVertices = eventData->nPV();
+	    out_trueNumInteractions = eventData->nPV_True;
+        out_numPUVertices = eventData->nPV;
         out_recoNVtx = recoVtxData->nVtx;
 
         /////////////////////////////////////////////

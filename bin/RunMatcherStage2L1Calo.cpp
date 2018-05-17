@@ -87,10 +87,10 @@ int main(int argc, char* argv[]) {
     L1AnalysisEventDataFormat * eventData = eventTree.getData();
 
     // hold reco vertex info
-    // L1GenericTree<L1AnalysisRecoVertexDataFormat> recoVtxTree(opts.inputFilename(),
-    //                                                           "l1RecoTree/RecoTree",
-    //                                                            "Vertex");
-    // L1AnalysisRecoVertexDataFormat * recoVtxData = recoVtxTree.getData();
+    L1GenericTree<L1AnalysisRecoVertexDataFormat> recoVtxTree(opts.inputFilename(),
+                                                              "l1RecoTree/RecoTree",
+                                                               "Vertex");
+    L1AnalysisRecoVertexDataFormat * recoVtxData = recoVtxTree.getData();
 
     // input filename stem (no .root)
     fs::path inPath(opts.inputFilename());
@@ -218,8 +218,8 @@ int main(int argc, char* argv[]) {
         // Store pileup quantities //
         /////////////////////////////
         // note these get stored once per pair of matched jets NOT once per event
-        out_trueNumInteractions = eventData->nPV_True();
-        out_numPUVertices = eventData->nPV();
+        out_trueNumInteractions = eventData->nPV_True;
+        out_numPUVertices = eventData->nPV;
         out_recoNVtx = recoVtxData->nVtx;
 
         /////////////////////////////////////////////
