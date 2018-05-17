@@ -118,6 +118,7 @@ int main(int argc, char* argv[]) {
     outTree.Branch("phi", &out_phi, "phi/Float_t");
     outTree.Branch("nL1", &out_nL1, "nL1/Int_t");
     outTree.Branch("indL1", &out_ind, "indL1/Int_t");
+
     // Quantities for reference jets (GenJet, etc):
     float out_ptRef(-1.), out_etaRef(99.), out_phiRef(99.);
     int out_nRef(-1), out_indRef;
@@ -126,6 +127,7 @@ int main(int argc, char* argv[]) {
     outTree.Branch("phiRef", &out_phiRef, "phiRef/Float_t");
     outTree.Branch("nRef", &out_nRef, "nRef/Int_t");
     outTree.Branch("inRef", &out_indRef, "indRef/Int_t");
+
     // Quantities to describe relationship between the two:
     float out_rsp(-1.);
     float out_dr(99.), out_deta(99.), out_dphi(99.);
@@ -139,6 +141,7 @@ int main(int argc, char* argv[]) {
     outTree.Branch("resL1", &out_resL1, "resL1/Float_t"); // resolution = L1 - Ref / L1
     outTree.Branch("resRef", &out_resRef, "resRef/Float_t"); // resolution = L1 - Ref / Ref
     outTree.Branch("nMatches", &out_nMatches, "nMatches/Int_t");
+    
     // PU quantities
     float out_trueNumInteractions(-1.), out_numPUVertices(-1.);
     int out_recoNVtx(0);

@@ -227,10 +227,12 @@ int main(int argc, char* argv[]) {
         ////////////////////////
         out_event = eventData->event;
 
-	//        puInfoTree.GetEntry(iEntry);
-	//        out_trueNumInteractions = puInfoTree.trueNumInteractions();
-	//        out_numPUVertices = puInfoTree.numPUVertices();
-	//        out_recoNVtx = recoVtxData->nVtx;
+        /////////////////////////////
+        // Store pileup quantities //
+        /////////////////////////////
+	    out_trueNumInteractions = eventData->nPV_True();
+        out_numPUVertices = eventData->nPV();
+        out_recoNVtx = recoVtxData->nVtx;
 
         /////////////////////////////////////////////
         // Get vectors of ref & L1 jets from trees //

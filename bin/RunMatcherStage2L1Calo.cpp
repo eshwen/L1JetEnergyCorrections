@@ -218,8 +218,9 @@ int main(int argc, char* argv[]) {
         // Store pileup quantities //
         /////////////////////////////
         // note these get stored once per pair of matched jets NOT once per event
-        // out_trueNumInteractions = refData->nMeanPU;
-        // out_numPUVertices = refData->nVtx;
+        out_trueNumInteractions = eventData->nPV_True();
+        out_numPUVertices = eventData->nPV();
+        out_recoNVtx = recoVtxData->nVtx;
 
         /////////////////////////////////////////////
         // Make vectors of ref & L1 jets from trees //

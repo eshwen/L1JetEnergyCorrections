@@ -237,10 +237,8 @@ int main(int argc, char* argv[]) {
         // Store pileup quantities //
         /////////////////////////////
         // note these get stored once per pair of matched jets NOT once per event
-	//        puInfoTree.GetEntry(iEntry);
-	//        out_trueNumInteractions = puInfoTree.trueNumInteractions();
-	//        out_numPUVertices = puInfoTree.numPUVertices();
-	//        out_recoNVtx = recoVtxData->nVtx;
+        out_trueNumInteractions = refData->nMeanPU;
+        out_numPUVertices = refData->nVtx;
 
         /////////////////////////////////////////////
         // Make vectors of ref & L1 jets from trees //

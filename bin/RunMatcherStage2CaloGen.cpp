@@ -134,7 +134,8 @@ int main(int argc, char* argv[]) {
     outTree.Branch("etaRef", &out_etaRef, "etaRef/Float_t");
     outTree.Branch("phiRef", &out_phiRef, "phiRef/Float_t");
     outTree.Branch("nRef", &out_nRef, "nRef/Int_t");
-
+    outTree.Branch("inRef", &out_indRef, "indRef/Int_t");
+    
     // Cleaning vars
     float out_chef(-1.), out_nhef(-1.), out_pef(-1.), out_eef(-1.), out_mef(-1.), out_hfhef(-1.), out_hfemef(-1.);
     short out_chMult(-1), out_nhMult(-1), out_phMult(-1), out_elMult(-1), out_muMult(-1), out_hfhMult(-1), out_hfemMult(-1);
@@ -242,10 +243,8 @@ int main(int argc, char* argv[]) {
         // Store pileup quantities //
         /////////////////////////////
         // note these get stored once per pair of matched jets NOT once per event
-	//        puInfoTree.GetEntry(iEntry);
-	//        out_trueNumInteractions = puInfoTree.trueNumInteractions();
-	//        out_numPUVertices = puInfoTree.numPUVertices();
-	//        out_recoNVtx = recoVtxData->nVtx;
+        out_trueNumInteractions = refData->nMeanPU;
+        out_numPUVertices = refData->nVtx;
 
         /////////////////////////////////////////////
         // Make vectors of ref & L1 jets from trees //
